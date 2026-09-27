@@ -189,6 +189,8 @@
       max-width: 620px; margin: 0 auto 2.5rem; color: var(--txt-muted);
       font-size: 1.02rem; line-height: 1.8; animation: fadeUp .9s .3s ease both;
     }
+    .hero-desc a { color: var(--cyan-lt); text-decoration: none; border-bottom: 1px dashed rgba(103,232,249,.4); }
+    .hero-desc a:hover { border-bottom-style: solid; }
     .hero-actions {
       display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
       animation: fadeUp .9s .4s ease both;
@@ -373,6 +375,12 @@
     .edu-degree { font-weight: 700; font-size: .95rem; margin-bottom: .2rem; }
     .edu-school { color: var(--cyan-lt); font-size: .85rem; font-weight: 500; margin-bottom: .2rem; }
     .edu-period { color: var(--txt-muted); font-size: .8rem; }
+    .edu-card.edu-featured { grid-column: 1 / -1; border-color: rgba(16,185,129,.25); }
+    .edu-card.edu-featured:hover { border-color: rgba(16,185,129,.45); }
+    .edu-thesis { color: var(--txt-muted); font-size: .85rem; line-height: 1.65; margin-top: .7rem; }
+    .edu-thesis em { color: var(--txt2); }
+    .edu-thesis a { color: var(--green); text-decoration: none; font-weight: 600; white-space: nowrap; }
+    .edu-thesis a:hover { text-decoration: underline; }
 
     /* volunteer */
     .volunteer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-top: 1.5rem; }
@@ -382,6 +390,51 @@
       font-weight: 500; color: var(--txt-muted); transition: all .25s;
     }
     .vol-chip:hover { border-color: var(--violet); color: var(--violet-lt); }
+
+    /* ─── RESEARCH ──────────────────────────────────────────── */
+    #research { background: linear-gradient(180deg, transparent, rgba(16,185,129,0.04), transparent); }
+    .pub-card {
+      margin-top: 2.5rem; padding: 2rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      backdrop-filter: blur(12px); position: relative; overflow: hidden;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .pub-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--cyan), var(--violet));
+    }
+    .pub-card:hover { border-color: rgba(16,185,129,.35); box-shadow: 0 0 40px rgba(16,185,129,0.1); }
+    .pub-venue { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: 1rem; }
+    .pub-badge {
+      font-size: .72rem; font-weight: 600; padding: .22rem .7rem; border-radius: 50px;
+      background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); color: var(--green);
+    }
+    .pub-journal { font-size: .85rem; color: var(--txt2); margin-right: .3rem; }
+    .pub-journal em { color: var(--cyan-lt); font-weight: 600; }
+    .pub-title {
+      font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.15rem, 2.4vw, 1.45rem);
+      font-weight: 700; line-height: 1.35; margin-bottom: .6rem;
+    }
+    .pub-authors { font-size: .86rem; color: var(--txt-muted); margin-bottom: 1.1rem; }
+    .pub-authors strong { color: var(--txt); font-weight: 600; }
+    .pub-abstract { color: var(--txt-muted); font-size: .9rem; line-height: 1.75; max-width: 820px; }
+    .pub-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin: 1.6rem 0 1.2rem; }
+    .pub-stat {
+      padding: 1rem 1.1rem; background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+    .pub-stat-num {
+      font-family: 'Space Grotesk', sans-serif; font-size: 1.55rem; font-weight: 700;
+      background: linear-gradient(135deg, var(--green), var(--cyan-lt));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .pub-stat-label { font-size: .76rem; color: var(--txt-muted); line-height: 1.45; margin-top: .1rem; }
+    .pub-actions { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.6rem; }
+    .pub-cite {
+      margin-top: 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--border);
+      font-size: .78rem; color: var(--txt-muted); line-height: 1.6;
+    }
+    .pub-cite a { color: var(--cyan-lt); text-decoration: none; word-break: break-all; }
 
     /* ─── TALKS ─────────────────────────────────────────────── */
     #talks { background: linear-gradient(180deg, transparent, rgba(6,182,212,0.04), transparent); }
@@ -609,11 +662,14 @@
       .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
       .form-row { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
+      .pub-stats { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:800px){
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
     }
     @media(max-width:640px){
       nav { padding: 1rem 1.2rem; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
       .skills-grid { grid-template-columns: repeat(3, 1fr); }
       .awards-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 1.4rem; }
@@ -640,6 +696,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#career">Career</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#talks">Talks</a></li>
     <li><a href="#content">Content</a></li>
     <li><a href="#awards">Awards</a></li>
@@ -668,7 +725,8 @@
     <p class="hero-desc">
       Android Architect · Firebase Specialist · Flutter Engineer · Community Builder.
       Co-founder of GDG 6th of October with 20,000+ members, and speaker across
-      Egypt, Kuwait, Oman, India &amp; the US.
+      Egypt, Kuwait, Oman, India &amp; the US. My M.Sc. research on crime detection in
+      surveillance video is <a href="#research">published in MDPI <em>Algorithms</em></a>.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Get in Touch</a>
@@ -710,6 +768,7 @@
             <div class="about-card-icon">🎓</div>
             <div>
               <h4>Education</h4>
+              <p>M.Sc. Computer Science (Data Science &amp; ML) · AASTMT, 2026 — thesis published in MDPI <em>Algorithms</em></p>
               <p>B.Sc. Computer Science · Akhbar al-Yom Academy, 2018 — Very Good with Honor</p>
             </div>
           </div>
@@ -769,11 +828,11 @@
       <div class="skill-pill reveal d3"><div class="skill-icon">📐</div><div class="skill-name">SDUI / Architecture</div></div>
       <div class="skill-pill reveal d4"><div class="skill-icon">🤖</div><div class="skill-name">Google Assistant</div></div>
       <div class="skill-pill reveal d4"><div class="skill-icon">💬</div><div class="skill-name">DialogFlow</div></div>
-      <div class="skill-pill reveal d5"><div class="skill-icon">🧠</div><div class="skill-name">Machine Learning</div></div>
+      <div class="skill-pill reveal d5"><div class="skill-icon">🧠</div><div class="skill-name">Deep Learning / CV</div></div>
       <div class="skill-pill reveal d5"><div class="skill-icon">🔵</div><div class="skill-name">IBM Watson</div></div>
       <div class="skill-pill reveal d6"><div class="skill-icon">🌐</div><div class="skill-name">Web Dev</div></div>
       <div class="skill-pill reveal d6"><div class="skill-icon">🎨</div><div class="skill-name">UI/UX Design</div></div>
-      <div class="skill-pill reveal d7"><div class="skill-icon">🐍</div><div class="skill-name">Python / ML</div></div>
+      <div class="skill-pill reveal d7"><div class="skill-icon">🐍</div><div class="skill-name">Python · PyTorch</div></div>
       <div class="skill-pill reveal d7"><div class="skill-icon">☕</div><div class="skill-name">Java</div></div>
       <div class="skill-pill reveal d8"><div class="skill-icon">📱</div><div class="skill-name">iOS (Flutter)</div></div>
       <div class="skill-pill reveal d8"><div class="skill-icon">📋</div><div class="skill-name">Project Mgmt</div></div>
@@ -963,6 +1022,17 @@
       <h3 class="section-title" style="font-size:1.6rem;">Academic <span>Background</span></h3>
       <div class="divider"></div>
       <div class="edu-grid">
+        <div class="edu-card edu-featured reveal">
+          <div class="edu-icon">🧠</div>
+          <div class="edu-degree">M.Sc. Computer Science — Data Science &amp; Machine Learning</div>
+          <div class="edu-school">Arab Academy for Science, Technology &amp; Maritime Transport (AASTMT)</div>
+          <div class="edu-period">College of Computing &amp; IT · Smart Village, Giza · 2026</div>
+          <p class="edu-thesis">
+            Thesis: <em>HRM-Crime: A Hierarchical Relationship Model for Weakly Supervised Crime Anomaly Detection in Surveillance Video</em>,
+            supervised by Dr. Ayman Helmy &amp; Assoc. Prof. Mohamed Mostafa Fouad.
+            <a href="#research">Published in MDPI Algorithms →</a>
+          </p>
+        </div>
         <div class="edu-card reveal d1">
           <div class="edu-icon">🎓</div>
           <div class="edu-degree">B.Sc. Computer Science</div>
@@ -990,6 +1060,54 @@
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ═══════════════════ RESEARCH ═══════════════════ -->
+<section id="research">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag">Research</div>
+      <h2 class="section-title">Published <span>Research</span></h2>
+      <div class="divider"></div>
+      <p class="section-sub">Peer-reviewed work from my M.Sc. at AASTMT on computer vision and weakly supervised learning.</p>
+    </div>
+
+    <article class="pub-card reveal">
+      <div class="pub-venue">
+        <span class="pub-journal"><em>Algorithms</em> (MDPI) 2026, 19(10), 811</span>
+        <span class="pub-badge">Peer-reviewed</span>
+        <span class="pub-badge">Open Access</span>
+        <span class="pub-badge">IF 2.6 · CiteScore 5.4</span>
+      </div>
+      <h3 class="pub-title">HRM-Crime: A Hierarchical Relationship Model for Weakly Supervised Crime Anomaly Detection in Surveillance Video</h3>
+      <div class="pub-authors"><strong>Eslam Medhat Fathy Habib</strong>, Ayman Helmy, Mohamed Mostafa Fouad · Published 22 September 2026</div>
+      <p class="pub-abstract">
+        Detecting crime in surveillance footage when the only label says "something happened somewhere in this video", with no
+        timestamps or bounding boxes. Instead of scaling up the backbone, HRM-Crime keeps the score model compact, pairing windowed
+        self-attention for local temporal patterns with dilated 1-D convolutions for long-range context. Three copies are trained on
+        deliberately different views of each video (appearance, motion, and both) and fused by rank normalisation.
+      </p>
+      <div class="pub-stats">
+        <div class="pub-stat"><div class="pub-stat-num">0.930</div><div class="pub-stat-label">ROC-AUC on UCF-Crime (three-stream ensemble)</div></div>
+        <div class="pub-stat"><div class="pub-stat-num">+0.021</div><div class="pub-stat-label">AUC gain over best single model, p&nbsp;=&nbsp;0.0008</div></div>
+        <div class="pub-stat"><div class="pub-stat-num">270K</div><div class="pub-stat-label">Trainable parameters per model</div></div>
+        <div class="pub-stat"><div class="pub-stat-num">98</div><div class="pub-stat-label">Training runs reported, not just the best seed</div></div>
+      </div>
+      <div class="tl-tags">
+        <span class="tag">Computer Vision</span><span class="tag">Video Anomaly Detection</span><span class="tag">Weakly Supervised Learning</span>
+        <span class="tag">Multiple Instance Learning</span><span class="tag">Transformers</span><span class="tag">Ensemble Learning</span><span class="tag">PyTorch</span>
+      </div>
+      <div class="pub-actions">
+        <a href="https://www.mdpi.com/1999-4893/19/10/811" target="_blank" rel="noopener" class="btn-primary"><i class="fas fa-file-lines"></i> Read the Paper</a>
+        <a href="https://github.com/madahetooo/hrm-anomaly-detection" target="_blank" rel="noopener" class="btn-ghost"><i class="fab fa-github"></i> Code &amp; Scripts</a>
+      </div>
+      <div class="pub-cite">
+        <strong>Cite:</strong> Habib, E.M.F.; Helmy, A.; Fouad, M.M. HRM-Crime: A Hierarchical Relationship Model for Weakly Supervised
+        Crime Anomaly Detection in Surveillance Video. <em>Algorithms</em> <strong>2026</strong>, <em>19</em>, 811.
+        <a href="https://doi.org/10.3390/a19100811" target="_blank" rel="noopener">https://doi.org/10.3390/a19100811</a>
+      </div>
+    </article>
   </div>
 </section>
 
@@ -1523,7 +1641,7 @@ counters.forEach(c=>cObs.observe(c));
 
 /* ── Typewriter ── */
 (function(){
-  const titles=['Google Developer Expert','Android Architect','Firebase Specialist','Flutter Engineer','Community Builder','Speaker &amp; Mentor'];
+  const titles=['Google Developer Expert','Android Architect','ML Researcher','Firebase Specialist','Flutter Engineer','Community Builder','Speaker &amp; Mentor'];
   const el=document.getElementById('typedTitle');
   if(!el)return;
   let ti=0,ci=0,del=false;
