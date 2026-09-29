@@ -543,6 +543,63 @@
     }
     .platform-badge:hover { border-color: var(--cyan); color: var(--cyan-lt); transform: translateY(-2px); }
 
+    /* youtube */
+    .yt-block { margin-top: 3.5rem; }
+    .yt-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+    .yt-sub { color: var(--txt-muted); font-size: .88rem; max-width: 560px; }
+    .yt-channel-btn { padding: .6rem 1.3rem; font-size: .88rem; }
+    .yt-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+    .yt-card {
+      display: flex; flex-direction: column; gap: .5rem; padding: .7rem; text-decoration: none; color: var(--txt);
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); transition: all .3s;
+    }
+    .yt-card:hover { border-color: rgba(255,77,77,.4); transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.25); }
+    .yt-thumb { position: relative; border-radius: var(--radius-sm); overflow: hidden; aspect-ratio: 16 / 9; background: var(--bg2); }
+    .yt-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .yt-dur {
+      position: absolute; right: .4rem; bottom: .4rem; padding: .05rem .4rem; border-radius: 4px;
+      background: rgba(0,0,0,.8); font-size: .7rem; font-weight: 600;
+    }
+    .yt-card-title { font-size: .85rem; font-weight: 600; line-height: 1.45; }
+    .yt-card-meta { font-size: .75rem; color: var(--txt-muted); margin-top: auto; }
+    .yt-playlists { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: .7rem; margin-bottom: 2.5rem; }
+    .yt-pl {
+      display: flex; align-items: center; gap: .6rem; padding: .8rem 1rem; text-decoration: none; color: var(--txt);
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      font-size: .85rem; font-weight: 500; transition: all .25s;
+    }
+    .yt-pl:hover { border-color: var(--violet); transform: translateY(-3px); }
+    .yt-pl > i { color: var(--violet-lt); font-size: .8rem; }
+    .yt-pl-title { flex: 1; }
+    .yt-badge {
+      font-size: .65rem; font-weight: 700; padding: .1rem .45rem; border-radius: 50px;
+      background: rgba(245,158,11,.12); border: 1px solid rgba(245,158,11,.3); color: var(--amber);
+    }
+    .yt-pl-count { font-size: .75rem; color: var(--txt-muted); min-width: 1.6rem; text-align: right; }
+    .yt-tools { display: flex; gap: .7rem; flex-wrap: wrap; align-items: center; margin-bottom: 1rem; }
+    .yt-search { position: relative; flex: 1; min-width: 220px; }
+    .yt-search i { position: absolute; left: .9rem; top: 50%; transform: translateY(-50%); color: var(--txt-muted); font-size: .8rem; }
+    .yt-search input, .yt-tools select {
+      width: 100%; padding: .7rem 1rem .7rem 2.3rem; border-radius: 9px; background: var(--surface);
+      border: 1px solid var(--border); color: var(--txt); font-family: 'Inter', sans-serif; font-size: .88rem; outline: none;
+    }
+    .yt-tools select { width: auto; max-width: min(300px, 100%); padding-left: 1rem; cursor: pointer; }
+    .yt-tools select option { background: var(--bg2); }
+    .yt-search input:focus, .yt-tools select:focus { border-color: var(--violet); }
+    .yt-count { font-size: .8rem; color: var(--txt-muted); }
+    .yt-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr)); gap: .5rem; }
+    .yt-list a {
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1rem;
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+      text-decoration: none; color: var(--txt2); font-size: .84rem; transition: border-color .25s, color .25s;
+    }
+    .yt-list a:hover { border-color: rgba(255,77,77,.4); color: var(--txt); }
+    .yt-title { flex: 1; min-width: 0; }
+    .yt-meta { font-size: .72rem; color: var(--txt-muted); white-space: nowrap; }
+    .yt-more-wrap { text-align: center; margin-top: 1.4rem; }
+    #ytMore { cursor: pointer; font-family: 'Inter', sans-serif; }
+    #ytMore[hidden] { display: none; }
+
     /* ─── AWARDS ────────────────────────────────────────────── */
     #awards { background: linear-gradient(180deg, transparent, rgba(245,158,11,0.04), transparent); }
     .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.3rem; margin-top: 2.5rem; }
@@ -668,6 +725,7 @@
       .form-row { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .pub-stats { grid-template-columns: 1fr 1fr; }
+      .yt-grid { grid-template-columns: 1fr 1fr; gap: .7rem; }
     }
     @media(max-width:800px){
       .nav-links { display: none; }
@@ -679,6 +737,9 @@
       .awards-grid { grid-template-columns: 1fr; }
       .hero-stats { gap: 1.4rem; }
       .talks-stats { flex-direction: column; gap: .7rem; }
+      .yt-card { padding: .5rem; }
+      .yt-card-title { font-size: .78rem; }
+      .yt-tools select { width: 100%; max-width: 100%; }
     }
     /* mobile nav open */
     .nav-links.open {
@@ -1244,7 +1305,7 @@
       <div class="section-tag">Resources</div>
       <h2 class="section-title">Free Educational <span>Content</span></h2>
       <div class="divider"></div>
-      <p class="section-sub">Slide decks, crash courses and presentations I've made freely available for the developer community.</p>
+      <p class="section-sub">Slide decks, crash courses, presentations and 330+ YouTube videos I've made freely available for the developer community.</p>
     </div>
 
     <div class="content-grid">
@@ -1370,6 +1431,431 @@
       </div>
 
     </div>
+
+    <!-- YT:START (generated from the @Madahetooo channel) -->
+    <div class="yt-block" id="youtube">
+      <div class="yt-head reveal">
+        <div>
+          <div class="series-title" style="margin-bottom:.3rem;"><i class="fab fa-youtube" style="color:#ff4d4d;"></i> YouTube Channel · @Madahetooo</div>
+          <p class="yt-sub">332 free videos in Arabic and English on Android, Kotlin, Java, Flutter, Firebase, Google Cloud, chatbots and more.</p>
+        </div>
+        <a href="https://www.youtube.com/@Madahetooo" target="_blank" rel="noopener" class="btn-ghost yt-channel-btn"><i class="fab fa-youtube"></i> Visit Channel</a>
+      </div>
+      <div class="topics-title reveal">Most Watched</div>
+      <div class="yt-grid">
+        <a class="yt-card reveal d1" href="https://www.youtube.com/watch?v=e8V5B_XoojA" target="_blank" rel="noopener">
+          <div class="yt-thumb"><img src="https://i.ytimg.com/vi/e8V5B_XoojA/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" /><span class="yt-dur">2:40</span></div>
+          <div class="yt-card-title" dir="auto">خطتك كاملة لتصبح مطور تطبيقات اندرويد 🔥</div>
+          <div class="yt-card-meta">8.5K views</div>
+        </a>
+        <a class="yt-card reveal d2" href="https://www.youtube.com/watch?v=JK3s4N_mBCk" target="_blank" rel="noopener">
+          <div class="yt-thumb"><img src="https://i.ytimg.com/vi/JK3s4N_mBCk/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" /><span class="yt-dur">25:05</span></div>
+          <div class="yt-card-title" dir="auto">🤩 👌 و ازاي تنضم ليها ؟  GDG ايه هيا  | Google Developer Groups</div>
+          <div class="yt-card-meta">7.8K views</div>
+        </a>
+        <a class="yt-card reveal d3" href="https://www.youtube.com/watch?v=0Zd1UCGFGFM" target="_blank" rel="noopener">
+          <div class="yt-thumb"><img src="https://i.ytimg.com/vi/0Zd1UCGFGFM/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" /><span class="yt-dur">2:59</span></div>
+          <div class="yt-card-title" dir="auto">رحلة وصولي ل Google Developer Expert ( GDE ) 🔥</div>
+          <div class="yt-card-meta">2.6K views</div>
+        </a>
+        <a class="yt-card reveal d4" href="https://www.youtube.com/watch?v=8RkJrbIJU54" target="_blank" rel="noopener">
+          <div class="yt-thumb"><img src="https://i.ytimg.com/vi/8RkJrbIJU54/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" /><span class="yt-dur">1:10:44</span></div>
+          <div class="yt-card-title" dir="auto">؟ Flutter ازاي تبدأ في</div>
+          <div class="yt-card-meta">2.2K views</div>
+        </a>
+        <a class="yt-card reveal d5" href="https://www.youtube.com/watch?v=mQ_8urTEHdo" target="_blank" rel="noopener">
+          <div class="yt-thumb"><img src="https://i.ytimg.com/vi/mQ_8urTEHdo/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" /><span class="yt-dur">1:00:19</span></div>
+          <div class="yt-card-title" dir="auto">todo list Flutter app with Firebase Firestore database 🤔 !  ازاي تعمل في ساعة</div>
+          <div class="yt-card-meta">2K views</div>
+        </a>
+        <a class="yt-card reveal d6" href="https://www.youtube.com/watch?v=xuZTMNIH7qY" target="_blank" rel="noopener">
+          <div class="yt-thumb"><img src="https://i.ytimg.com/vi/xuZTMNIH7qY/mqdefault.jpg" alt="" loading="lazy" width="320" height="180" /><span class="yt-dur">57:14</span></div>
+          <div class="yt-card-title" dir="auto">The Key to Programming - How to Get Started in the Programming Field</div>
+          <div class="yt-card-meta">1.9K views</div>
+        </a>
+      </div>
+      <div class="topics-title reveal">Playlists &amp; Courses</div>
+      <div class="yt-playlists">
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zn4vK5rwobPL2m4P4VS4Rl5" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Android with Kotlin</span><span class="yt-pl-count">52</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zlDhEYkzn2cASmuxVES2kGD" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Android Development with Java</span><span class="yt-pl-count">47</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zkI2bvAHMagt5HGX8c2yGbG" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">JAVA for Android</span><span class="yt-badge">Course</span><span class="yt-pl-count">47</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zmPuNdwqBkXnCPv2aNOyaV8" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Flutter</span><span class="yt-badge">Course</span><span class="yt-pl-count">38</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zlqItMafh3mg3vaCsMBhEu2" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Dart</span><span class="yt-badge">Course</span><span class="yt-pl-count">33</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zljPmmlJTiBY9-yV2CjnSDj" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Kotlin</span><span class="yt-pl-count">32</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zmZY_Q0JaP8x-PltDMDGKqV" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Ultimate Google Cloud Platform (GCP) Tutorial for Beginners</span><span class="yt-pl-count">30</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zmeaM_n34glovryMU5WOR_c" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Chatbots</span><span class="yt-pl-count">27</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zne-z9qxn4qAq-D5jgK-iQg" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">AI &amp; Machine Learning</span><span class="yt-pl-count">8</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zlZ1jHNs2m77SyW8aF-hRYi" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Firebase</span><span class="yt-pl-count">7</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29znRNsOg4HVGLg7ZGfEwbD3a" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Firebase</span><span class="yt-pl-count">6</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zlas8v2FrCL2cBmSkbYbR3R" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Coroutines</span><span class="yt-pl-count">5</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zlie2C_c1_10uqkyCxia3Xo" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">MENADD</span><span class="yt-pl-count">5</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zn4oQiU2qDIiCXgir_mkz9V" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Version Control</span><span class="yt-pl-count">5</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zlrsO9erOkX9P78xqiN19bA" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Vlogs</span><span class="yt-pl-count">4</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zk32blmx_WsUKNYx7Ia9c3Z" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">UI &amp; UX Fundamentals</span><span class="yt-pl-count">3</span></a>
+        <a class="yt-pl reveal" href="https://www.youtube.com/playlist?list=PLRe9rctk29zn8FT2SZ7gGdVQ8d98RlAdo" target="_blank" rel="noopener"><i class="fas fa-list-ul"></i><span class="yt-pl-title" dir="auto">Soft Skills</span><span class="yt-pl-count">2</span></a>
+      </div>
+      <div class="topics-title reveal">All Videos</div>
+      <div class="yt-tools reveal">
+        <div class="yt-search"><i class="fas fa-search"></i><input type="search" id="ytSearch" placeholder="Search 332 videos…" aria-label="Search videos" /></div>
+        <select id="ytPlaylist" aria-label="Filter by playlist">
+          <option value="">All playlists</option>
+          <option value="0">Android with Kotlin (52)</option>
+          <option value="1">Android Development with Java (47)</option>
+          <option value="2">JAVA for Android (47)</option>
+          <option value="3">Flutter (38)</option>
+          <option value="4">Dart (33)</option>
+          <option value="5">Kotlin (32)</option>
+          <option value="6">Ultimate Google Cloud Platform (GCP) Tutorial for Beginners (30)</option>
+          <option value="7">Chatbots (27)</option>
+          <option value="8">AI &amp; Machine Learning (8)</option>
+          <option value="9">Firebase (7)</option>
+          <option value="10">Firebase (6)</option>
+          <option value="11">Coroutines (5)</option>
+          <option value="12">MENADD (5)</option>
+          <option value="13">Version Control (5)</option>
+          <option value="14">Vlogs (4)</option>
+          <option value="15">UI &amp; UX Fundamentals (3)</option>
+          <option value="16">Soft Skills (2)</option>
+        </select>
+        <span class="yt-count" id="ytCount">332 videos</span>
+      </div>
+      <ol class="yt-list" id="ytList">
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=IBOVpPiEZ38" target="_blank" rel="noopener"><span class="yt-title" dir="auto">It’s Essential for Mobile Developers to Understand Server-Driven UI</span><span class="yt-meta">2:32</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=UVNNnBngN-Y" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Google cloud professional certificate course roadmab</span><span class="yt-meta">6:28</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=7TDASebywwU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Server-Driven UI with Firebase (Part 2): Update Your UI Without App Releases</span><span class="yt-meta">30:14</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=uTfKg7A64LQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Server Driven UI vs Traditional UI أيهما أفضل؟</span><span class="yt-meta">22:40</span></a></li>
+        <li data-pl="13"><a href="https://www.youtube.com/watch?v=Bnrb13CqYS0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05 - commit readme file</span><span class="yt-meta">12:20</span></a></li>
+        <li data-pl="13"><a href="https://www.youtube.com/watch?v=l2afVAY8hRw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04 - pushing the project to github</span><span class="yt-meta">9:11</span></a></li>
+        <li data-pl="13"><a href="https://www.youtube.com/watch?v=au4Gz7HqL20" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03 - github profile tour</span><span class="yt-meta">11:43</span></a></li>
+        <li data-pl="13"><a href="https://www.youtube.com/watch?v=EwnYwNYBiiQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02 - more about github</span><span class="yt-meta">12:24</span></a></li>
+        <li data-pl="13"><a href="https://www.youtube.com/watch?v=X3qCGSHLsm8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01 - Introduction to github</span><span class="yt-meta">10:34</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=_vOdgCvHHHs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">24 - creating the dialog class and interface</span><span class="yt-meta">12:29</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=Yq6p5uCrxTw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">23 - creating dialog layout</span><span class="yt-meta">10:10</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=or91CQphDuY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">22 - creating the adapter</span><span class="yt-meta">15:30</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=cAAyXezxJu8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">21 - creating the layouts</span><span class="yt-meta">9:54</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=pZnuJE1b8bo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">20 - creating the view model factory</span><span class="yt-meta">6:27</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=Lp6zuFbDsvo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">19 - creating the view model class</span><span class="yt-meta">5:02</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=yH0RjI4hMnM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">18 - creating the repository class</span><span class="yt-meta">4:17</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=_Ek3f-U7sRI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">17 - Creating the database class</span><span class="yt-meta">9:51</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=kGlq1Iq8_cU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">16 - Creating the Data Access Object (DAO)</span><span class="yt-meta">9:03</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=XKHVjnxAfIM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">15 - Creating the Data class</span><span class="yt-meta">6:08</span></a></li>
+        <li data-pl="0 11"><a href="https://www.youtube.com/watch?v=N52CjnJtTsk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14 - Creating the structure and adding room database</span><span class="yt-meta">13:02</span></a></li>
+        <li data-pl="0 11"><a href="https://www.youtube.com/watch?v=7EqMpSnrH20" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13 - Intro to MVVM design pattern in Android</span><span class="yt-meta">5:30</span></a></li>
+        <li data-pl="11"><a href="https://www.youtube.com/watch?v=TOpooCmZ0YI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12 - Measure time Millis function</span><span class="yt-meta">2:39</span></a></li>
+        <li data-pl="11"><a href="https://www.youtube.com/watch?v=K1t9IhUMGqw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11 - Async and Await in coroutines</span><span class="yt-meta">5:21</span></a></li>
+        <li data-pl="11"><a href="https://www.youtube.com/watch?v=ecENlnmg26s" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10 -  Jobs and Joins example IN COROUTINES</span><span class="yt-meta">6:22</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=ZupvpyCoXTc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09 - Cancel in coroutine</span><span class="yt-meta">3:02</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=91m-g3JOls8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08 -  Join in coroutines</span><span class="yt-meta">5:35</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=y-kSj1W_Osw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07 - How run blocking work</span><span class="yt-meta">3:37</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=MS3Z-6PHazM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06 - run blocking vs thread</span><span class="yt-meta">6:35</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=s9BO_GnQoz8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05 -  with context block</span><span class="yt-meta">7:04</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=Ms9HGoXx-IM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04 - coroutine global scope</span><span class="yt-meta">9:35</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=5z4vF8vEs9w" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03 - more about kotlin coroutines</span><span class="yt-meta">5:51</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=UqMFOwWu70o" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02 - intro to kotlin coroutines</span><span class="yt-meta">10:48</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=bu9o27j7Bk8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01 - introduction to the Android advanced level</span><span class="yt-meta">2:02</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=U7643kg2WPg" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14 - login validation</span><span class="yt-meta">6:27</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=G8Fez18aq9I" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13 - notifications ازاي تعمل</span><span class="yt-meta">14:19</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=7joBm76Uh9Y" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12  broadcast receivers</span><span class="yt-meta">6:48</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=6i_awzgm4P4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12 - How to easily create an Adapter for RecyclerView!</span><span class="yt-meta">15:54</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=KMoUmoMoXWM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Casuelouh app - Gemini Hackathon</span><span class="yt-meta">2:12</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=Q4gsaj-rUH8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11- RecyclerViews in Android</span><span class="yt-meta">9:40</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=ty8uFelEjxw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10- Advanced Navigation Drawer Techniques</span><span class="yt-meta">10:54</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=PzKGaInT-vM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09- Unlocking Seamless Navigation</span><span class="yt-meta">12:04</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=2BUtmy7m83w" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08-  Empowering User Navigation</span><span class="yt-meta">9:44</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=9NVbQyKalC8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07- Managing App Preferences: Utilizing SharedPreferences in Kotlin</span><span class="yt-meta">13:04</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=PSCcUwKbQ3Y" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06- Crafting Unique Typography</span><span class="yt-meta">6:09</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=XQOqcxA35eU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05-  Revamping EditText</span><span class="yt-meta">7:51</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=mbvgu_BgoC0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04- Unveiling Material Design</span><span class="yt-meta">9:01</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=v_GeGIM0634" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03- Double Tap to Exit</span><span class="yt-meta">8:06</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=ENGOKbV33o8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02- Alert Dialogs in Android</span><span class="yt-meta">10:18</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=4mSP7W_fYTY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01-  Introduction to android development intermediate level</span><span class="yt-meta">1:11</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=ASzlL_IcHmY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">17- Completing the Android Basics Course</span><span class="yt-meta">0:56</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=NMYgwil8drw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">16- Build an Intuitive Registration Screen in Android</span><span class="yt-meta">11:36</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=lT8LPvl7wKI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">15-  Crafting a Secure and Stylish Login Screen</span><span class="yt-meta">11:00</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=sZsrNC3S6IY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14-  Advanced Restaurant App Logic</span><span class="yt-meta">10:52</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=Dv07ZU9ADWI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13-  Building a Restaurant Order Form</span><span class="yt-meta">12:11</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=5OfFjxlZ6aM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12-  Creating a Stunning Splash Screen in Android</span><span class="yt-meta">8:37</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=YR06xLH1lrI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11-  Effortless Screen Navigation in Android</span><span class="yt-meta">7:13</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=8uoZXpeRTHA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10-  Building a Calculator App in Android</span><span class="yt-meta">14:33</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=8ot_SGRnwrY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09- ImageViews Example in Android</span><span class="yt-meta">9:04</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=nuz3GFDIbaM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08-  TextViews Counter Example in Android</span><span class="yt-meta">7:16</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=4i5skdChOsA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07- Form Logic in Android</span><span class="yt-meta">11:17</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=Ja_CbZ_FqY8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06- Form Design</span><span class="yt-meta">16:29</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=KtqEKPXANk0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05-  Hello World &amp; Android Studio Tour</span><span class="yt-meta">14:13</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=zYSNCAjHqOU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04- Your First Android Project</span><span class="yt-meta">10:09</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=8bYRzuqVzzY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03-  Android Versions &amp; Android Studio</span><span class="yt-meta">7:19</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=IbkwPeGaUvs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02- تطور الانددويد</span><span class="yt-meta">6:23</span></a></li>
+        <li data-pl="0"><a href="https://www.youtube.com/watch?v=S6ynNxL-Y90" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01- مقدمة في بناء تطبيقات الاندرويد</span><span class="yt-meta">3:28</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=CUM1hJiy4s0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">23-  Wrapping Up: Key Takeaways and Next Steps in Your Kotlin Coding Journey!</span><span class="yt-meta">1:47</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=WaEZaoArUOE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">22- Kotlin Interfaces</span><span class="yt-meta">13:08</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=COenWtF55yA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">21- Abstracting Complexity in Kotlin</span><span class="yt-meta">16:06</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=CuiaRjDX7rc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">20-  Inheritance in Kotlin</span><span class="yt-meta">13:22</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=LttaLrj-alo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">19- Build an ATM Simulation in Kotlin</span><span class="yt-meta">21:19</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=3Zl208wTHK8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">18- Introduction to Object-Oriented Programming (OOP) with Kotlin</span><span class="yt-meta">5:35</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=qzR93zlbZhQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">17-  Smart Casting in Kotlin</span><span class="yt-meta">5:20</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=1F4RfX_B8Mk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">16- Kotlin Error Handling</span><span class="yt-meta">6:21</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=mASTvWye7z8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">15-  Kotlin Functions</span><span class="yt-meta">14:13</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=0kLcxMVvTwA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14- Kotlin For Loops</span><span class="yt-meta">6:51</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=jERjGlSfyLo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13-  When Condition in Kotlin</span><span class="yt-meta">11:37</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=3F_VVI_mDxM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12- Kotlin Logical Operators</span><span class="yt-meta">5:58</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=T3aVuBhYI_c" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11- Kotlin Unary Operators</span><span class="yt-meta">5:39</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=7KjiBnQ0w2A" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10-  Kotlin Assignment Operators</span><span class="yt-meta">6:17</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=EOcZK5XKSPE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09- Kotlin Relational Operators</span><span class="yt-meta">7:02</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=TGRKhoiUXmk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08-  Kotlin Arithmetic Operators</span><span class="yt-meta">4:34</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=FV5vKcdQY9c" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07-  Data types</span><span class="yt-meta">5:35</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=Wxm6gOe_ouE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06-  var vs val</span><span class="yt-meta">4:28</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=V56amnSgso4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05-  Kotlin Variables</span><span class="yt-meta">8:20</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=yW0ryYD7a9k" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04- Hello World app</span><span class="yt-meta">12:14</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=MIgsMo4B2n0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03 - ليه هنشتغل ب inteliji ?</span><span class="yt-meta">6:30</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=WDN0wbAiXvI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02 - ليه تبدآ ب Kotlin  ؟</span><span class="yt-meta">5:09</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=cE9hL6P9ums" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01- مقدمة لمجال الاندرويد</span><span class="yt-meta">4:42</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=ddtG40MgG4M" target="_blank" rel="noopener"><span class="yt-title" dir="auto">67 - Sign in with Google   Part 2</span><span class="yt-meta">4:10</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=epx1dd952-0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">66 - Sign in with Google</span><span class="yt-meta">10:48</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=VQAMG5hjtos" target="_blank" rel="noopener"><span class="yt-title" dir="auto">65 - Firebase Integration with Flutter</span><span class="yt-meta">11:21</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=5GNQqzE5-Fk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">64  Design Chat app   Part 3</span><span class="yt-meta">16:54</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=9ez5vHqCmw8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">62 - Designing Chat App -  Part 2</span><span class="yt-meta">16:11</span></a></li>
+        <li data-pl="3 9"><a href="https://www.youtube.com/watch?v=JSmSSnhLkqY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">61 - Design Chat app  - Part 1</span><span class="yt-meta">20:44</span></a></li>
+        <li data-pl="3 9"><a href="https://www.youtube.com/watch?v=VfoADt1tEXU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">60 - What is Firebase  - Part 2</span><span class="yt-meta">13:22</span></a></li>
+        <li data-pl="3 9"><a href="https://www.youtube.com/watch?v=AN8tN7Bt2Ow" target="_blank" rel="noopener"><span class="yt-title" dir="auto">59 - What is Firebase  - Part 1</span><span class="yt-meta">18:31</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=6Rtamwxelzs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">58 - World Time Api  - Part 5 and final</span><span class="yt-meta">2:13</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=Mm5J3OHIytQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">57 - World Time Api  - Part 4</span><span class="yt-meta">20:49</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=64rSFkkKPy4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">56 - World Time Api -  Part 3</span><span class="yt-meta">19:01</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=j0P2VSCxngw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">55 - World Time Api - Part 2</span><span class="yt-meta">11:06</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=vKEMLDqnc30" target="_blank" rel="noopener"><span class="yt-title" dir="auto">54 - World Time Api - Part 1</span><span class="yt-meta">17:17</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=J7vNzSKq_OQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">53 - What is APIs 🤔 ?</span><span class="yt-meta">11:43</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=e2dqIO77gGM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">52 - Todo list app  - Part 5 and final</span><span class="yt-meta">8:40</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=wM3tENfc4PM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">51 - Todo list app  - Part 4</span><span class="yt-meta">15:55</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=8t9sbqUa6lc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">50 - Todo list app  - Part 3</span><span class="yt-meta">15:18</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=eWESP5XcvU4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">49 -  Todo list App  - Part 2</span><span class="yt-meta">19:33</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=Hsp3MeTKL-o" target="_blank" rel="noopener"><span class="yt-title" dir="auto">48 - Todo list -  Part 1</span><span class="yt-meta">14:53</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=Rc5KeM02k2M" target="_blank" rel="noopener"><span class="yt-title" dir="auto">47 - BMI Calculator  - Part 2</span><span class="yt-meta">10:56</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=5vXUwuLJEuA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">46 - BMI Calculator  - Part1</span><span class="yt-meta">18:47</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=FHhaX9D37o8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">45 - Bottom Navigation Bar Example</span><span class="yt-meta">11:29</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=AYjYfussEcA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">44 - Toast Example</span><span class="yt-meta">8:55</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=80p7oKf1ZmU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">43 - ListView Example</span><span class="yt-meta">4:23</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=XS9MzjEeYJ4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">42 - GridView Example</span><span class="yt-meta">8:04</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=TbsGE7twKoA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">41 - Design Home Screen</span><span class="yt-meta">9:57</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=cf32Llcv_Cg" target="_blank" rel="noopener"><span class="yt-title" dir="auto">40 - Design Navigation Drawer</span><span class="yt-meta">14:07</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=vb5zo6l0roI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">39 - Tabbar Widget</span><span class="yt-meta">9:08</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=4EnAD8_P8nY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">38 - Designing Splash Screen</span><span class="yt-meta">11:32</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=s4P0k0G-AHM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">37 - Design Registration Screen</span><span class="yt-meta">21:18</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=SVUPFiwhFoU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">36 - Design Login Screen - Part 2</span><span class="yt-meta">17:54</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=GhSKoeCJCDo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">35 - &quot;How to Create a Stunning Login Screen in 15 Minutes!&quot; - Part 1</span><span class="yt-meta">16:27</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=ufO8spr1ba8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">34 - Get Ready to Program: &quot;Hello World&quot;</span><span class="yt-meta">15:43</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=6OjahoXnGbk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">33 - Flutter Installation</span><span class="yt-meta">18:38</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=VXpgtkWzw_k" target="_blank" rel="noopener"><span class="yt-title" dir="auto">32 - Flutter as a Framework</span><span class="yt-meta">17:32</span></a></li>
+        <li data-pl="1 2 3 4 5 6 7 8 9 10 12 14 15 16"><a href="https://www.youtube.com/watch?v=xuZTMNIH7qY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">The Key to Programming - How to Get Started in the Programming Field</span><span class="yt-meta">57:14</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=737QYqYcTRU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 31  - Outro</span><span class="yt-meta">0:36</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=j1MEzdtf8uM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 30  - Interface</span><span class="yt-meta">9:58</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=MaMVuY22_z4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 29  -  Abstraction</span><span class="yt-meta">14:05</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=0kHJOslp6gc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 28  - Constructor</span><span class="yt-meta">11:37</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=6q0SX7_z3tw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 27  -  Super Keyword 🔥</span><span class="yt-meta">6:57</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=nd5V64wIu8E" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 26  - Inheritance   Part 2</span><span class="yt-meta">3:48</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=56z-dlukQkY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 25  -  Inheritance</span><span class="yt-meta">9:52</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=qMWWEdBT37E" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 24  -  Introduction To OOP</span><span class="yt-meta">5:04</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=8s7QOv8nMik" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 23  -  ATM Example | OOP</span><span class="yt-meta">19:21</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=jWl3WU8V2xo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 22  -  Dart Functions</span><span class="yt-meta">13:20</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=HHSMyRyiUMA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 21 -  Do While loop</span><span class="yt-meta">3:11</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=RfUnxibIzlI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 20  -  While Loop</span><span class="yt-meta">2:33</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=tKZkFg3WjuE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 19  -  For Loop in Dart</span><span class="yt-meta">4:55</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=unQFs-C7h4Q" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 18  - Dart Map |  Part 2</span><span class="yt-meta">4:31</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=ih0XK217FL0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 17  -  Dart Map    |    Part 1</span><span class="yt-meta">5:20</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=zcLFqzJjJ7c" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 16  -  Dart Lists</span><span class="yt-meta">13:45</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=arielDMy3y4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 15  -  Nested Switch Case</span><span class="yt-meta">8:26</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=4UfL0kScXoc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 14  -  Switch Case  🔁</span><span class="yt-meta">4:52</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=aaRHB_PeApY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 13  -  If Else   🤷🏻‍♂️</span><span class="yt-meta">6:46</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=DaDZ8PL9kUQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 12  - Ternary Operator</span><span class="yt-meta">2:31</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=ckHtDXthmEw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 11 -  Logical Operator</span><span class="yt-meta">4:00</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=iO6CHYb0f6s" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 10  -  Type Test Operator</span><span class="yt-meta">2:40</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=m8k2m20z_sI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 09  - Relational Operator</span><span class="yt-meta">5:04</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=3S0EwXGpi9o" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 08 - Assignment Operators. ➕🟰</span><span class="yt-meta">2:23</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=6O8bldrZXms" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 07 -  Unary Operator  ➕➕</span><span class="yt-meta">4:34</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=c_tnl4bSwzM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 06  - Arithmetic Operators. ➕➖➗✖️</span><span class="yt-meta">3:47</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=mEoKX3iiKDY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 05  -  Dart Variables 🔁  - المتغيرات</span><span class="yt-meta">7:08</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=XklCaCO57J4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 04  - Hello World App  👋🏻</span><span class="yt-meta">11:32</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=yQ2ce0k-3jM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 03  - Intro To Dart - مقدمة في لغة الدارت  🥳</span><span class="yt-meta">8:09</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=dcPle2XY5CE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 02 - Why Choose Flutter - 🤔 🐥 ليه فلاتر ؟</span><span class="yt-meta">13:06</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=qcaNJkMLTKQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Lesson 01  - Intro To Flutter as a Cross Platform 🔥🤔 - ماهي فلاتر ؟</span><span class="yt-meta">7:31</span></a></li>
+        <li data-pl="4"><a href="https://www.youtube.com/watch?v=0CWYeA6Cf5U" target="_blank" rel="noopener"><span class="yt-title" dir="auto">00 - Introduction to Flutter with Dart Course 🔥 - مقدمة لكورس الفلاتر</span><span class="yt-meta">4:21</span></a></li>
+        <li data-pl="9"><a href="https://www.youtube.com/watch?v=H26_WydqEmY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">🇱🇧 🔥 محاضرتي في لبنان عن الفايربيز وأخر التحديثات</span><span class="yt-meta">35:24</span></a></li>
+        <li data-pl="9"><a href="https://www.youtube.com/watch?v=MvsGo0uMJzc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">How to build Notification - Broadcast Receiver - Firebase Cloud Messaging</span><span class="yt-meta">2:05:31</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=z6jpB4aP6t0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07 - Data Types  انواع الـ</span><span class="yt-meta">5:57</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=mr4XOJwmQ-I" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06 - Var vs Val</span><span class="yt-meta">4:33</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=GL4eG2fjnuQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05 - kotlin Variables</span><span class="yt-meta">8:22</span></a></li>
+        <li data-pl="9"><a href="https://www.youtube.com/watch?v=mPVX1J4NNv4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Firebase:: WhatsNext ?!  🤔</span><span class="yt-meta">23:55</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=ouvfl1J-o64" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04-  🤓  Hello World Project   أول</span><span class="yt-meta">12:26</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=E3J5y9QJQ6g" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03- 👆🏻 Inteliji    ليه هنستخدم الــ</span><span class="yt-meta">6:41</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=_L_NY98xnRk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02-  🤔  ليه الكوتلن ؟؟</span><span class="yt-meta">5:27</span></a></li>
+        <li data-pl="5"><a href="https://www.youtube.com/watch?v=cpS27bdOM8w" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01- يالا بينا نبدا تراك الموبايل مع الكوتلن  🔥</span><span class="yt-meta">3:54</span></a></li>
+        <li data-pl="3"><a href="https://www.youtube.com/watch?v=mQ_8urTEHdo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">todo list Flutter app with Firebase Firestore database 🤔 !  ازاي تعمل في ساعة</span><span class="yt-meta">1:00:19</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=JUBCWaR_V4k" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Build Actions for Google Assistant using Actions Builder Level 2</span><span class="yt-meta">46:17</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=ihxPYe0ufA0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Build Actions for Google Assistant using Actions Builder - Level 1</span><span class="yt-meta">52:40</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=a8YSWCbhAXk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">How to Build a Restaurant Locator Chatbot</span><span class="yt-meta">29:11</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=MQj-b3H5A2g" target="_blank" rel="noopener"><span class="yt-title" dir="auto">How to use Youtube API to create a custom chatbot using DialogFlow</span><span class="yt-meta">50:35</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=0Zd1UCGFGFM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">رحلة وصولي ل Google Developer Expert ( GDE ) 🔥</span><span class="yt-meta">2:59</span></a></li>
+        <li data-pl="1 5 12"><a href="https://www.youtube.com/watch?v=cXo53M3gArQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">لغه الكوتلن في اقل من ساعة🔥🔥</span><span class="yt-meta">54:00</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=e8V5B_XoojA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">خطتك كاملة لتصبح مطور تطبيقات اندرويد 🔥</span><span class="yt-meta">2:40</span></a></li>
+        <li data-pl="8"><a href="https://www.youtube.com/watch?v=AgYmGfZEF7I" target="_blank" rel="noopener"><span class="yt-title" dir="auto">ازاى تعمل Image Classification with Auto ML Vision Step by Step 🔥🔥</span><span class="yt-meta">1:36:26</span></a></li>
+        <li data-pl="8"><a href="https://www.youtube.com/watch?v=Tz4z395gQ-k" target="_blank" rel="noopener"><span class="yt-title" dir="auto">مقدمه في تعلم الالة  Machine Learning Models  | Titanic Tutorial Model  🔥🔥</span><span class="yt-meta">1:39:42</span></a></li>
+        <li data-pl="8"><a href="https://www.youtube.com/watch?v=BMMAqCakLGI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Introduction To Python  |  مقدمة في البايثون 🔥🔥</span><span class="yt-meta">1:23:26</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=cqMji9nqwe8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">22 -  ازاي تربط الشات بوت مع رقم تلفون</span><span class="yt-meta">5:30</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=o9vt-PLgpTw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">21 - Facebook Messanger ازاي تربط الشات بوت مع</span><span class="yt-meta">11:41</span></a></li>
+        <li data-pl="8"><a href="https://www.youtube.com/watch?v=TUH__IZN_PE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Image Classification و تعمل ابلكيشن فيه Firebase AutoMLVision ازاي تستخدم</span><span class="yt-meta">33:33</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=xQMefKXaiWo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">20 - DialogFlow | Web Integration | الربط مع الويب</span><span class="yt-meta">11:16</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=qdiqPgnAdTw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">19 - Dialog Flow | Smart Talk</span><span class="yt-meta">9:32</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=vyDJz_YFimQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">18 - DialogFlow Intent</span><span class="yt-meta">14:10</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=5vcCCLJlfWg" target="_blank" rel="noopener"><span class="yt-title" dir="auto">17 - DialogFlow Creating Agent Part1</span><span class="yt-meta">3:24</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=JlPHWqdZGiI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">16 - Google Assistant |   Part 2</span><span class="yt-meta">11:26</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=3zBXkS1CQgI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">15 - Google Assistant  ايه هوا ال</span><span class="yt-meta">14:50</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=9vc8WgfUXFU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14 - ازاى تربط الشات بوت مع الموقع الخاص بيك</span><span class="yt-meta">12:43</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=_d82K4SqrGE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13 - اللمسات الاخيره للشات بوت</span><span class="yt-meta">13:56</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=Pyw_VIFnvlA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12 - Entities | part 2</span><span class="yt-meta">3:15</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=MHDKRsL_a6A" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11 - Entities in chatbot</span><span class="yt-meta">5:19</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=ubTEulPKcoQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10 - Rich Content  &quot; Pre built content &quot; | Final Part</span><span class="yt-meta">7:08</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=umdQOusdbjI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09 - Rich Content  &quot;  Adding Dialogs &quot; |  Part 5</span><span class="yt-meta">11:28</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=WFzMAICkCck" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08 - Rich Content | Part 4  &quot;Pre built intents&quot;</span><span class="yt-meta">10:08</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=YghRJioxhew" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07 - Rich Content | part 3 &quot; Adding Categories &quot;</span><span class="yt-meta">18:17</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=atCjc7owMfs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06 - Rich Content | part 2 - Responses Type</span><span class="yt-meta">15:55</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=6JOZmsKWaAE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05 - Rich Content  | Part 1</span><span class="yt-meta">14:17</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=uusf7cihtug" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04 -   IBM Watson Account ازاي تعمل</span><span class="yt-meta">19:13</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=ZQK9jLfQ4nY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03 -  Chatbots اهم ثلاثه اشياء لازم تعرفهم في ال</span><span class="yt-meta">6:26</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=SowNgMDYvhs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02 - ايه هيا ال Chatbot Features!!</span><span class="yt-meta">9:20</span></a></li>
+        <li data-pl="7"><a href="https://www.youtube.com/watch?v=OLFLIAQrzP4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01 - ايه هوا ال Chatbots ?!</span><span class="yt-meta">4:39</span></a></li>
+        <li data-pl="14"><a href="https://www.youtube.com/watch?v=f81y5mEKicA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">My Working From Home Productivity Setup 2021</span><span class="yt-meta">1:46</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=ugiIWP3fzgw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14 - How to make double press to Exit in Android</span><span class="yt-meta">7:39</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=lt1aphYbJV0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06 - Designing Registration Page</span><span class="yt-meta">20:10</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=bB3TSGmC2Ns" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03 - Hello World Android Application</span><span class="yt-meta">19:18</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=oiTQ-jlVBWw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">27 - How to make media player app using ExoPlayer</span><span class="yt-meta">20:23</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=kchYZU1Svus" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11 - Splash Screen in android</span><span class="yt-meta">10:20</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=g-inlN1v3GA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">31 - Connect3 Game | Final Part</span><span class="yt-meta">10:55</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=cNTJWUBy1Gk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01 - History of Android</span><span class="yt-meta">7:24</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=WpOFPW5XQ8I" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07 - Designing Forget Password Page</span><span class="yt-meta">8:38</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=zEtAPh2KSj8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">22 - How to make Web Views in Android</span><span class="yt-meta">8:27</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=vrU5zD9c320" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09 - What is Manifest File in Android</span><span class="yt-meta">10:27</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=szGoGX6zruo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02 - Android Components</span><span class="yt-meta">10:46</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=Mv--cI--X5M" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12 - Calculator Project Design</span><span class="yt-meta">15:42</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=JP_1lOQj_HM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">27 - How to make Media Player app using &quot;ExoPlayer&quot;</span><span class="yt-meta">20:23</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=p1SL26hEneM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">34 - How to Call APIs and make an API Request</span><span class="yt-meta">26:49</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=ohsB2Yozc2U" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05 - Designing Login Page</span><span class="yt-meta">11:48</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=dqlltc--QqM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">41 - How to Publish your android app on Play Store |  Part 2</span><span class="yt-meta">14:19</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=j0CebK7E1kE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13 - Calculator Android Application Logic</span><span class="yt-meta">22:19</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=oxe8CiXXgOM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">24 - Shared Preferences in android</span><span class="yt-meta">18:26</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=JEBlE17ZP1Y" target="_blank" rel="noopener"><span class="yt-title" dir="auto">29 - Connect3 Backend Part 1</span><span class="yt-meta">14:36</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=jBKntvTFFIo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">30 - Connect3 Java Code | Part2</span><span class="yt-meta">10:59</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=XFsTDoMIprc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">26 - Temperature Converter App Backend Code</span><span class="yt-meta">15:06</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=cV39R1xNuTQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04  - Quick View of XML in Android</span><span class="yt-meta">14:56</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=ZhGen1PmejI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">15 - Home Activity  | The Base Activity</span><span class="yt-meta">7:16</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=QpIsiPwenck" target="_blank" rel="noopener"><span class="yt-title" dir="auto">16 - Random Highest Mountains App</span><span class="yt-meta">15:04</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=L5-b8hzOleA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">28 - Connect3 Game Design</span><span class="yt-meta">20:03</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=C-lcKCR0Cuk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">20 - Dog Or Cat App Design</span><span class="yt-meta">19:20</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=E5gAAlh7crc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10 - Toasts</span><span class="yt-meta">9:13</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=GV8Ig_cRhiU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">33 - How to Get Current Location with Google Maps</span><span class="yt-meta">16:08</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=Bh6IYdTpy7E" target="_blank" rel="noopener"><span class="yt-title" dir="auto">21- Dog Or Cat Quiz Java Code</span><span class="yt-meta">15:02</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=2P8OB2iC1iQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">17 - Restaurant App Design</span><span class="yt-meta">16:41</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=7WGStBMvThI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">32 - How to use Google Maps in Android</span><span class="yt-meta">17:16</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=abljNZE1mbM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08 - Navigation Through Pages</span><span class="yt-meta">12:07</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=2lIebLEqoVs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">25 -Temperature Converter App Design</span><span class="yt-meta">12:00</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=0911Avr4mEc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">40 - How to  Publish your app on Play Store | Part 1</span><span class="yt-meta">11:52</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=aC1T4ZUwaTo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">19 - How to Make Alert Dialog</span><span class="yt-meta">11:45</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=ngYcgtk5Syo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">18 - Restaurant Backend Code</span><span class="yt-meta">11:19</span></a></li>
+        <li data-pl="1"><a href="https://www.youtube.com/watch?v=Tg7PRnMLs0s" target="_blank" rel="noopener"><span class="yt-title" dir="auto">23 -How to insert PDF file using PDF Views in android</span><span class="yt-meta">8:46</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=v62Lcecl11c" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13 - Arithmetic and Logical Operators</span><span class="yt-meta">8:57</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=yWdR5c4tJXk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">21 - For Each</span><span class="yt-meta">5:40</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=wLiEyJETmx4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">43  One Dimensional Arrays</span><span class="yt-meta">8:14</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=oW0O4Tcm5CI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">30 - ATM Java Project</span><span class="yt-meta">15:53</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=tEfJ2HWAHvU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">15 - IF : Else Full Example</span><span class="yt-meta">8:57</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=sAulMHQzzbo" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01- What is Java !!</span><span class="yt-meta">9:24</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=dJWPqYpsY84" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06 - Scan Data From User in Java</span><span class="yt-meta">13:34</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=b6Qls4RCylI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12 - Common Keywords &amp; Scape Sequence</span><span class="yt-meta">7:44</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=TpWApzWN5z8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">38 - Method Overriding</span><span class="yt-meta">5:54</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=z8hGUQ1zJOI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">44 - Multi Dimensional Arrays</span><span class="yt-meta">4:57</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=syRm_BqYWEc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">16 - Nested IF</span><span class="yt-meta">7:05</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=gpfMtN7qPO8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">23 - While Loops</span><span class="yt-meta">4:20</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=iFROOl30E9I" target="_blank" rel="noopener"><span class="yt-title" dir="auto">24 - Do While Loop</span><span class="yt-meta">4:32</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=hGrsHVV6P98" target="_blank" rel="noopener"><span class="yt-title" dir="auto">32 - Static Java Keyword</span><span class="yt-meta">13:48</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=nTrihyiY828" target="_blank" rel="noopener"><span class="yt-title" dir="auto">36 - Inheritance Example in Java</span><span class="yt-meta">13:40</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=hy8mNKM-JME" target="_blank" rel="noopener"><span class="yt-title" dir="auto">34 - Constructor in Java</span><span class="yt-meta">22:02</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=g0UCPxTVetg" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10 - Priority of Operations in Java</span><span class="yt-meta">8:19</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=fgcsiAyqvAI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">46-  Access Modifier in Java</span><span class="yt-meta">6:49</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=evgbnykkyMk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">18 - Nested Switch Case</span><span class="yt-meta">11:06</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=cLGJOMYXuIw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">41 - Java Interface</span><span class="yt-meta">15:03</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=NIBfYy4SqAs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">25 - Lets OOP ( Object Oriented Programming)</span><span class="yt-meta">13:49</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=Yltp-H5bORE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">45 - Recursion in java</span><span class="yt-meta">2:43</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=JeeS6-F86gM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">17 - Switch Case</span><span class="yt-meta">9:22</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=Ruc8-kO8D7k" target="_blank" rel="noopener"><span class="yt-title" dir="auto">19 - For Loops</span><span class="yt-meta">8:47</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=fVp8dzY0mZU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">28 - Player CLass Project - OOP</span><span class="yt-meta">13:56</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=Wj_a6PlQs2w" target="_blank" rel="noopener"><span class="yt-title" dir="auto">33 - Return : JavaKeyword</span><span class="yt-meta">11:10</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=AfE62-ueI4U" target="_blank" rel="noopener"><span class="yt-title" dir="auto">40 - Final Keyword in java</span><span class="yt-meta">3:00</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=JzkwGeFHNPw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">22 - Break and Continuo</span><span class="yt-meta">5:35</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=7xgrw5GxK6E" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05 - Data Types</span><span class="yt-meta">13:13</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=JlqSqagNYb4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">20 - Pyramid Example</span><span class="yt-meta">7:49</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=7RiHUrv5-eU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">35 - Inheritance in java</span><span class="yt-meta">11:53</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=Huk60WJpR1c" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14 - IF : Else</span><span class="yt-meta">8:15</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=CuNt5-ZSnO4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">27 - Object and Class in OOP</span><span class="yt-meta">10:37</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=BZNP_deRPmM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">37 - Method Overloading</span><span class="yt-meta">8:52</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=782vLqhhmVc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09 - Increment and Decrement in Java</span><span class="yt-meta">8:08</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=7J6YrzWJdFQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">29 - Player Class Project - Part 2</span><span class="yt-meta">7:16</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=4Ww9YIF1u_s" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12 - Common Keywords &amp; Scape Sequence</span><span class="yt-meta">7:44</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=2colVu309nE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">26 - OOP Features</span><span class="yt-meta">10:48</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=0RDu3GsNcW0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07 - Mathematical Operations in Java</span><span class="yt-meta">8:16</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=0D5elhYkW90" target="_blank" rel="noopener"><span class="yt-title" dir="auto">31 - ATM Java Project Part 2</span><span class="yt-meta">20:35</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=-yGSdFYfAr4" target="_blank" rel="noopener"><span class="yt-title" dir="auto">42 - Interface VS Abstraction in Java</span><span class="yt-meta">6:44</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=aBVfR8PHa0c" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04 - Java Comments</span><span class="yt-meta">8:12</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=-WoK0WgOlc8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">39 - Super Keyword in Java</span><span class="yt-meta">5:30</span></a></li>
+        <li data-pl="1 10"><a href="https://www.youtube.com/watch?v=soFjfqWRAtw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">39 - Login system with Firebase Authentication</span><span class="yt-meta">12:54</span></a></li>
+        <li data-pl="1 10"><a href="https://www.youtube.com/watch?v=19bmghb26VY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">38 - Firebase Database Final Part</span><span class="yt-meta">2:20</span></a></li>
+        <li data-pl="1 10"><a href="https://www.youtube.com/watch?v=HZ9KPgWn-Hg" target="_blank" rel="noopener"><span class="yt-title" dir="auto">37 - Firebase Database Part 2</span><span class="yt-meta">5:03</span></a></li>
+        <li data-pl="1 10"><a href="https://www.youtube.com/watch?v=kUQABMgupX0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">36 - Firebase Database Part 1   |     ازاي تستخدم و تربط فايربيز داتابيز</span><span class="yt-meta">21:18</span></a></li>
+        <li data-pl="1 10"><a href="https://www.youtube.com/watch?v=pUmShDQCljI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">35 - All Firebase Tools Introduction   |  كل استخدامات فايربيز</span><span class="yt-meta">9:51</span></a></li>
+        <li data-pl="3 12"><a href="https://www.youtube.com/watch?v=8RkJrbIJU54" target="_blank" rel="noopener"><span class="yt-title" dir="auto">؟ Flutter ازاي تبدأ في</span><span class="yt-meta">1:10:44</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=JK3s4N_mBCk" target="_blank" rel="noopener"><span class="yt-title" dir="auto">🤩 👌 و ازاي تنضم ليها ؟  GDG ايه هيا  | Google Developer Groups</span><span class="yt-meta">25:05</span></a></li>
+        <li data-pl=""><a href="https://www.youtube.com/watch?v=mpwNzwayOvs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">🤔 ؟ Github  ازاي تستخدم</span><span class="yt-meta">37:40</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=jTmxMZ3lWQg" target="_blank" rel="noopener"><span class="yt-title" dir="auto">07 -  Creating Virtual Machine  using command line</span><span class="yt-meta">5:59</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=ftgoQCTLqWI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">14 - Upload an Object into the bucket   |  Cloud Storage</span><span class="yt-meta">2:33</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=VquyBKItnmw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">27 - Setting Pub sub  |  Cloud Pub Sub</span><span class="yt-meta">5:16</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=rQMXIiD6mto" target="_blank" rel="noopener"><span class="yt-title" dir="auto">19 -   Removing Project Access  |  Cloud IAM</span><span class="yt-meta">1:45</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=qP0f62wpyHM" target="_blank" rel="noopener"><span class="yt-title" dir="auto">29 - Publish a Message  | Cloud Pub Sub</span><span class="yt-meta">2:32</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=G7lEOaCZzts" target="_blank" rel="noopener"><span class="yt-title" dir="auto">12 - Get Authentication Credentials for Cluster &amp; Deploying Application to Cluster</span><span class="yt-meta">7:37</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=pisHUUwcU1s" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08 - Install an NGINX web server</span><span class="yt-meta">3:57</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=nfZzgz41ykc" target="_blank" rel="noopener"><span class="yt-title" dir="auto">20 - Add a Storage Permission and Verify Access  |  CLOUD IAM</span><span class="yt-meta">2:30</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=eT3j3mPrVEY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03 - Cloud IAM  | Tour of GCP</span><span class="yt-meta">2:20</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=eLVdD8TdpZA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">18 - Prepare a Resource for Access Testing | Cloud Storage</span><span class="yt-meta">3:26</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=V5TzcV3ZUsU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">24 - Create a Function   |  Cloud Function</span><span class="yt-meta">5:07</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=f6l80rIxn_k" target="_blank" rel="noopener"><span class="yt-title" dir="auto">17 - The IAM Console and Project Levels roles | Cloud IAM</span><span class="yt-meta">4:51</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=crslS8WbRUY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">09 - Connect to your VM instance with SSH</span><span class="yt-meta">8:19</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=XhGTse6y1hs" target="_blank" rel="noopener"><span class="yt-title" dir="auto">22 - Create Monitoring Workspace  |  Cloud Monitoring</span><span class="yt-meta">8:48</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=N6NB3-35ke8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">21 - Install Apache2 HTTP Server  |  Cloud Monitoring</span><span class="yt-meta">6:42</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=MxeA-PAhKdY" target="_blank" rel="noopener"><span class="yt-title" dir="auto">05 - API LIBRARYS   |  Tour of GCP</span><span class="yt-meta">4:03</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=EKqwMz0IGoE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">04 - Cloud Shell  | Tour of GCP</span><span class="yt-meta">5:18</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=KiXgX6IG_Vw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">01 - Introduction and Course Outline</span><span class="yt-meta">1:42</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=NwpfZ_M-EgQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">15 - Share an Object Publicly   | Cloud Storage</span><span class="yt-meta">1:35</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=L2KnffJ_6-8" target="_blank" rel="noopener"><span class="yt-title" dir="auto">06 - Creating Virtual Machine on GCP from the Cloud console</span><span class="yt-meta">6:25</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=K2g9jDqAiTU" target="_blank" rel="noopener"><span class="yt-title" dir="auto">28 - Add a Subscription   |  Cloud Pub Sub</span><span class="yt-meta">3:08</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=9oEOBkjQEQA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">16 - Create Folders  | Cloud Storage</span><span class="yt-meta">3:09</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=N2T9Q9Oa_hw" target="_blank" rel="noopener"><span class="yt-title" dir="auto">23 - Creating Dashboards and Charts  |  Cloud Monitoring</span><span class="yt-meta">6:17</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=8S4osHrUHLE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">26 - View your Logs  |  Cloud Function</span><span class="yt-meta">3:16</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=EURRqd4Q82E" target="_blank" rel="noopener"><span class="yt-title" dir="auto">25 - Deploy and Test the Function  |  Cloud Functions</span><span class="yt-meta">2:49</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=CL5GELaLg-0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02 - How to Access Google Cloud Platform  | Tour of GCP</span><span class="yt-meta">4:08</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=CPgFf7oWwko" target="_blank" rel="noopener"><span class="yt-title" dir="auto">10 - Getting started with Cloud Shell and gcloud</span><span class="yt-meta">8:33</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=aZYUSpCmJ0k" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11 - Setting a default Compute Zone &amp; Creating a Kubernetes engine Cluster</span><span class="yt-meta">8:26</span></a></li>
+        <li data-pl="6"><a href="https://www.youtube.com/watch?v=-lZ0voLr1RQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">13 - Create a Bucket  |  Google Cloud Storage</span><span class="yt-meta">7:22</span></a></li>
+        <li data-pl="16"><a href="https://www.youtube.com/watch?v=cwmCAv30ClE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">CV ازاي تعمل</span><span class="yt-meta">1:01:29</span></a></li>
+        <li data-pl="15"><a href="https://www.youtube.com/watch?v=Zkip9kA88u0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">InVsion و Marvel وطريقة استخدام  UI &amp; UX  محاضرة عن أساسيات ال | Part 2</span><span class="yt-meta">50:05</span></a></li>
+        <li data-pl="15"><a href="https://www.youtube.com/watch?v=aPsV-XTXgAE" target="_blank" rel="noopener"><span class="yt-title" dir="auto">الجزء الاول UI &amp; UX اساسيات</span><span class="yt-meta">43:47</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=Wo_DoD3aAfg" target="_blank" rel="noopener"><span class="yt-title" dir="auto">03 - Hello World Java Application</span><span class="yt-meta">13:27</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=XKKtzitBYYA" target="_blank" rel="noopener"><span class="yt-title" dir="auto">02 - Java Life Cycle</span><span class="yt-meta">6:24</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=SN_zKKJ13bQ" target="_blank" rel="noopener"><span class="yt-title" dir="auto">08 - Mathematical Operations in Java Part 2</span><span class="yt-meta">10:14</span></a></li>
+        <li data-pl="2"><a href="https://www.youtube.com/watch?v=NOU6ACsLQ6s" target="_blank" rel="noopener"><span class="yt-title" dir="auto">11 - Circle Area Example</span><span class="yt-meta">10:21</span></a></li>
+        <li data-pl="14"><a href="https://www.youtube.com/watch?v=yE1trj3QS7U" target="_blank" rel="noopener"><span class="yt-title" dir="auto">💻 🎬   خطة كورسات القناة و التعريف بنفسي</span><span class="yt-meta">4:35</span></a></li>
+        <li data-pl="8"><a href="https://www.youtube.com/watch?v=dsOy2U9dE00" target="_blank" rel="noopener"><span class="yt-title" dir="auto">ML | Image Processing  محاضرة عن</span><span class="yt-meta">28:33</span></a></li>
+        <li data-pl="1 12"><a href="https://www.youtube.com/watch?v=Cay5Pdr2XU0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">ازاي ترفع تطبيقك علي متجر بلاي | Google Play Store</span><span class="yt-meta">47:28</span></a></li>
+        <li data-pl="1 12"><a href="https://www.youtube.com/watch?v=cRFl4neQ2wI" target="_blank" rel="noopener"><span class="yt-title" dir="auto">Firebase ازاي تعمل ابلكيشن شات اندرويد باستخدام</span><span class="yt-meta">1:03:45</span></a></li>
+        <li data-pl="8"><a href="https://www.youtube.com/watch?v=EhBLqkpWpr0" target="_blank" rel="noopener"><span class="yt-title" dir="auto">The Hello World of Machine Learning</span><span class="yt-meta">26:09</span></a></li>
+        <li data-pl="1 8"><a href="https://www.youtube.com/watch?v=LuvBmspOpic" target="_blank" rel="noopener"><span class="yt-title" dir="auto">يعني اية APIs ؟</span><span class="yt-meta">37:53</span></a></li>
+      </ol>
+      <div class="yt-more-wrap"><button type="button" class="btn-ghost" id="ytMore"><i class="fas fa-chevron-down"></i> Show more</button></div>
+    </div>
+    <!-- YT:END -->
 
     <div class="platforms-section reveal">
       <div class="platforms-title">Published Courses on These Platforms</div>
@@ -1671,6 +2157,34 @@ addEventListener('scroll',()=>{
     a.classList.toggle('active',matches);
   });
 },{passive:true});
+
+/* ── YouTube list: search, playlist filter, show more ── */
+(function(){
+  const list=document.getElementById('ytList');
+  if(!list)return;
+  const items=[...list.children].map(li=>({li,t:li.querySelector('.yt-title').textContent.toLowerCase(),pl:li.dataset.pl.split(' ')}));
+  const q=document.getElementById('ytSearch'), pl=document.getElementById('ytPlaylist');
+  const more=document.getElementById('ytMore'), count=document.getElementById('ytCount');
+  const PAGE=20; let limit=PAGE;
+  function render(){
+    const term=q.value.trim().toLowerCase(), p=pl.value;
+    let matched=0;
+    items.forEach(it=>{
+      const ok=(!term||it.t.includes(term))&&(!p||it.pl.includes(p));
+      if(ok) matched++;
+      it.li.hidden=!(ok&&matched<=limit);
+    });
+    const shown=Math.min(matched,limit);
+    count.textContent=matched===items.length&&!term&&!p
+      ? `Showing ${shown} of ${items.length} videos`
+      : `${matched} match${matched===1?'':'es'}`;
+    more.hidden=matched<=limit;
+  }
+  q.addEventListener('input',()=>{limit=PAGE;render();});
+  pl.addEventListener('change',()=>{limit=PAGE;render();});
+  more.addEventListener('click',()=>{limit+=40;render();});
+  render();
+})();
 
 /* ── Contact form ── */
 function handleSubmit(e){
